@@ -1,0 +1,16 @@
+# Added by https://ghe.iparadigms.com/AppOps/bootstrap-jet
+dockercfg
+jet-env
+
+**/.DS_Store
+
+.idea/
+target/
+.allure/
+
+*.iml
+
+.mvn/wrapper/maven-wrapper.jar
+
+
+/full-diff.txt

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+  <Properties>
+    <Property name="basePath">target/logs</Property>
+  </Properties>
+
+  <Appenders>
+    <RollingFile name="fileLogger"
+                 fileName="${basePath}/functional-test.log"
+                 filePattern="${basePath}/functional-test-%d{yyyy-MM-dd}.log">
+      <PatternLayout>
+        <Pattern>%d{dd-MMM-yyyy HH:mm:ss,SSS z} [%t] [%X{testName}] %-5level %logger{36} - %msg%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+      </Policies>
+    </RollingFile>
+
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout>
+        <Pattern>%d{dd-MMM-yyyy HH:mm:ss,SSS z} [%t] %-5level %logger{36} - %msg%n</Pattern>
+      </PatternLayout>
+    </Console>
+  </Appenders>
+
+  <Loggers>
+    <logger name="com.turnitin" level="debug" additivity="true">
+      <AppenderRef ref="fileLogger"/>
+    </logger>
+
+    <logger name="freemarker.cache" level="debug" additivity="true">
+      <AppenderRef ref="fileLogger"/>
+    </logger>
+
+    <Root level="info">
+      <AppenderRef ref="console"/>
+      <AppenderRef ref="fileLogger" />
+    </Root>
+  </Loggers>
+</Configuration>

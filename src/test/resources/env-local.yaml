@@ -1,0 +1,28 @@
+# Select with -Denv=qa or PW_ENV=qa. System properties remain the final override.
+defaultEnvironment: local
+
+defaults:
+  browser: chromium
+  headless: true
+  baseUrl: https://app.test/
+  actionTimeoutMs: 15000
+  navigationTimeoutMs: 30000
+  device: desktop
+  userAgent: Mozilla/5.0 custom-agent
+  deviceScaleFactor: 1
+  viewport:
+    width: 1440
+    height: 900
+  slowMoMs: 0
+  ignoreHttpsErrors: false
+  traceMode: retain-on-failure
+  screenshotMode: only-on-failure
+  diagnosticsEnabled: true
+  artifactsDirectory: target/artifacts
+
+environments:
+  local: {}
+#  qa:
+#    baseUrl: https://qa.example.test
+#  staging:
+#    baseUrl: https://staging.example.test
