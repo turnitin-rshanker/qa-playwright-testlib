@@ -22,6 +22,18 @@
     <slf4j-api.version>2.0.17</slf4j-api.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.github.rshanker</groupId>
+        <artifactId>playwright-testlib-bom</artifactId>
+        <version>1.0.2-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>com.microsoft.playwright</groupId>

@@ -26,8 +26,10 @@ A production-minded Playwright starter using Java 21, Maven, TestNG, AssertJ, an
 Install the browser once:
 
 ```shell
-mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
-```
+mvn exec:java \
+  -Dexec.mainClass=com.microsoft.playwright.CLI \
+  -Dexec.args="install chromium"
+  ```
 
 Run the suite:
 
